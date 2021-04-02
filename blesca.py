@@ -11,9 +11,11 @@ class ScanDelegate(DefaultDelegate):
             print "Received new data from", dev.addr
 
 scanner = Scanner()
-devices = scanner.scan(10.0)
+devices = scanner.scan(2.0)
 
 for dev in devices:
+    if dev.addr != '49:61:52:74:34:54':
+        continue
     print "Device %s (%s), RSSI=%d dB" % (dev.addr, dev.addrType, dev.rssi)
     for (adtype, desc, value) in dev.getScanData():
         print "  %s = %s" % (desc, value)

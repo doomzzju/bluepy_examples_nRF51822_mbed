@@ -5,7 +5,7 @@ if len(sys.argv) != 2:
   print "Fatal, must pass device address:", sys.argv[0], "<device address="">"
   quit()
 
-p = Peripheral(sys.argv[1],"random")
+p = Peripheral(sys.argv[1],"public")
 
 descriptors=p.getDescriptors(1,0x00F) #Bug if no limt is specified the function wil hang 
 				      # (go in a endless loop and not return anything)

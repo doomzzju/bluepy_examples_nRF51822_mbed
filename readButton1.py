@@ -11,7 +11,7 @@ if len(sys.argv) != 2:
   print "Fatal, must pass device address:", sys.argv[0], "<device address="">"
   quit()
 
-p = Peripheral(sys.argv[1], "random")
+p = Peripheral(sys.argv[1], "public")
 ButtonService=p.getServiceByUUID(button_service_uuid)
 
 try:
